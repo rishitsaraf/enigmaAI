@@ -1,0 +1,8 @@
+numpy==1.19.4 
+pandas==1.2.3  
+matplotlib==3.3.3  
+streamlit==0.69.0
+scikit-learn==0.24.1
+tensorflow==2.5.0 
+ffn==0.3.6 
+pyportfolioopt==1.4.2 
