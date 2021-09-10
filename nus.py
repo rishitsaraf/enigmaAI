@@ -14,8 +14,9 @@ from tensorflow.keras.layers import Dense, LSTM, Dropout
 import streamlit.components.v1 as components
 from PIL import Image
 
-sl.beta_set_page_config(layout="wide")
+
 # # Loading and splitting the dataset
+sl.set_page_config(layout="wide")
 img = Image.open("ENIGMA.png")
 sl.image(img)
 
@@ -27,7 +28,7 @@ sl.write('''
 
 ''')
 
-col1,col2 = sl.beta_columns(2)
+col1,col2 = sl.columns(2)
 
 col1.header("Past Performance")
 img2 = Image.open("chartcomb.jpeg")
