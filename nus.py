@@ -14,7 +14,7 @@ from tensorflow.keras.layers import Dense, LSTM, Dropout
 import streamlit.components.v1 as components
 from PIL import Image
 
-sl.beta_set_page_config(layout="wide")
+
 # # Loading and splitting the dataset
 img = Image.open("ENIGMA.png")
 sl.image(img)
@@ -22,12 +22,60 @@ sl.image(img)
 sl.write('''
     # Introduction
 
+    #### What Is Diversification? 
+    Diversification is a risk management strategy that mixes a wide variety of investments within a portfolio. A diversified portfolio contains a mix of distinct asset types and investment vehicles in an attempt at limiting exposure to any single asset or risk. The rationale behind this technique is that a portfolio constructed of different kinds of assets will, on average, yield higher long-term returns and lower the risk of any individual holding or security.
+
 ''')
+
+col1,col2 = sl.columns(2)
+
+col1.header("Past Performance")
 img2 = Image.open("chartcomb.jpeg")
-sl.image(img2)
+col1.image(img2, use_column_width=True)
 
 
-sl.write(''' # Output''')
+col2.header("How we chose our data")
+col2.write('''
+we have choosen 15 stocks 3 from different sectors ranging automobile, banking, metals, medical, and technology.
+
+we plan to optimize by diversyfying our portfolio so as to decrease the risk and that we do by choosing the maximum returns calculated by lstm model and which are highly correlated to their competitors.
+lets understand this by taking a hypothetical example.
+I have to invest money in 2 stocks A and B, both tech giants and i find stock A gives 20 percent higher returns compared to B. But i need to reduce my risk because they are highly correlated so if one stock drops there is a higher probability that the other stock drops too, therefore i choose to invest in A and another stock which is less likely correlated to A to reduce my risk.
+''')
+
+
+
+
+sl.write(''' # Predicting Stock prices''')
+
+col3,col4 = sl.columns(2)
+col3.header('LSTM Output')
+col3.write('''
+we have choosen 15 stocks 3 from different sectors ranging automobile, banking, metals, medical, and technology.
+
+we plan to optimize by diversyfying our portfolio so as to decrease the risk and that we do by choosing the maximum returns calculated by lstm model and which are highly correlated to their competitors.
+lets understand this by taking a hypothetical example.
+I have to invest money in 2 stocks A and B, both tech giants and i find stock A gives 20 percent higher returns compared to B. But i need to reduce my risk because they are highly correlated so if one stock drops there is a higher probability that the other stock drops too, therefore i choose to invest in A and another stock which is less likely correlated to A to reduce my risk.
+''')
+
+col4.header("")
+img3 = Image.open("lstmoutput.jpeg")
+col4.image(img3, use_column_width=True)
+
+#################
+
+col5,col6 = sl.columns((1,2))
+col5.header('Comparing different models')
+col5.write('''
+We are using LSTM to predict the stock prices as it outperforms both, Arima and seq2seq models with the least Mean Absolute Error.
+''')
+
+col6.header("")
+img4 = Image.open("lstmcompare.png")
+col6.image(img4, use_column_width=True)
+
+
+
 #Loading the data
 data = pd.read_excel(r'Combined_Stocks.xlsx', date_parser = True)
 data=data.dropna()
@@ -43,7 +91,8 @@ training_data = data_training.drop(['Date'], axis=1)
 testing_data = data_test.drop(['Date'], axis=1)
 
 
-# In[3]:
+
+
 
 
 from keras.callbacks import EarlyStopping
@@ -53,103 +102,112 @@ earlyStop=EarlyStopping(monitor="val_loss",verbose=2,mode='min',patience=3)
 # # Using LSTM to predict stock prices
 
 
-for i in range(0,len(training_data.columns)):
-    stock = training_data[training_data.columns[i]]
-    stocks_train = stock.to_frame()
-    stock_test = testing_data[testing_data.columns[i]]
-    stocks_test = stock_test.to_frame()
+# for i in range(0,len(training_data.columns)):
+#     stock = training_data[training_data.columns[i]]
+#     stocks_train = stock.to_frame()
+#     stock_test = testing_data[testing_data.columns[i]]
+#     stocks_test = stock_test.to_frame()
     
-    scaler = MinMaxScaler()
-    stocks = scaler.fit_transform(stocks_train)
+#     scaler = MinMaxScaler()
+#     stocks = scaler.fit_transform(stocks_train)
     
         
-    X_train = []
-    y_train = []
-    for j in range(200, stocks.shape[0]):
-        X_train.append(stocks[j-200:j])  
-        y_train.append(stocks[j,0])
+#     X_train = []
+#     y_train = []
+#     for j in range(200, stocks.shape[0]):
+#         X_train.append(stocks[j-200:j])  
+#         y_train.append(stocks[j,0])
     
-    X_train, y_train = np.array(X_train), np.array(y_train)
+#     X_train, y_train = np.array(X_train), np.array(y_train)
 
-    past_200_days = stocks_train.tail(200)
-    df = past_200_days.append(stocks_test, ignore_index=True)
+#     past_200_days = stocks_train.tail(200)
+#     df = past_200_days.append(stocks_test, ignore_index=True)
     
-    inputs = scaler.transform(df)
+#     inputs = scaler.transform(df)
 
-    X_test = []
-    y_test = []
+#     X_test = []
+#     y_test = []
     
-    for j in range(200, inputs.shape[0]):
-        X_test.append(inputs[j-200:j])
-        y_test.append(inputs[j,0])
+#     for j in range(200, inputs.shape[0]):
+#         X_test.append(inputs[j-200:j])
+#         y_test.append(inputs[j,0])
     
-    X_test, y_test  = np.array(X_test), np.array(y_test)
+#     X_test, y_test  = np.array(X_test), np.array(y_test)
     
-    model = Sequential()
-    model.add(LSTM(units = 60, activation = 'relu', return_sequences = True, input_shape = (X_train.shape[1],1)))
-    model.add(Dropout(0.2))
+#     model = Sequential()
+#     model.add(LSTM(units = 60, activation = 'relu', return_sequences = True, input_shape = (X_train.shape[1],1)))
+#     model.add(Dropout(0.2))
 
-    model.add(LSTM(units = 60, activation = 'relu', return_sequences = True))
-    model.add(Dropout(0.2))
+#     model.add(LSTM(units = 60, activation = 'relu', return_sequences = True))
+#     model.add(Dropout(0.2))
 
-    model.add(LSTM(units = 80, activation = 'relu', return_sequences = True))
-    model.add(Dropout(0.2))
+#     model.add(LSTM(units = 80, activation = 'relu', return_sequences = True))
+#     model.add(Dropout(0.2))
 
-    model.add(LSTM(units = 120, activation = 'relu'))
-    model.add(Dropout(0.2))
+#     model.add(LSTM(units = 120, activation = 'relu'))
+#     model.add(Dropout(0.2))
 
-    model.add(Dense(units = 1))
-    #model.summary()
+#     model.add(Dense(units = 1))
+#     #model.summary()
 
-    model.compile(optimizer='adam', loss = 'mse', metrics = ['accuracy'])
+#     model.compile(optimizer='adam', loss = 'mse', metrics = ['accuracy'])
     
-    history = model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs=1, batch_size=32, verbose=2, callbacks=[earlyStop])
-
-    
-    y_pred = model.predict(X_test)
-    
-    scale = 1/scaler.scale_[0]
-    
-    y_pred = y_pred*scale
-    y_test = y_test*scale
-    
-    plt.figure(figsize=(14,5))
-    plt.plot(y_test, color = 'red')
-    plt.xlabel(data.columns[i+1])
-    plt.ylabel("values")
-    plt.plot(y_pred, color = 'blue')
-
-    sl.pyplot(plt)
+#     history = model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs=1, batch_size=32, verbose=2, callbacks=[earlyStop])
 
     
-    first=np.mean(y_pred[150:180])
-    last=np.mean(y_pred[373:403])
-    percentage=(last-first)/first*100
+#     y_pred = model.predict(X_test)
     
-    print("stock name= "+ data.columns[i+1] )
+#     scale = 1/scaler.scale_[0]
+    
+#     y_pred = y_pred*scale
+#     y_test = y_test*scale
+    
+#     plt.figure(figsize=(14,5))
+#     plt.plot(y_test, color = 'red')
+#     plt.xlabel(data.columns[i+1])
+#     plt.ylabel("values")
+#     plt.plot(y_pred, color = 'blue')
 
-    print(percentage)
+#     sl.pyplot(plt)
 
-    print("")
+    
+#     first=np.mean(y_pred[150:180])
+#     last=np.mean(y_pred[373:403])
+#     percentage=(last-first)/first*100
+    
+#     print("stock name= "+ data.columns[i+1] )
 
-    if(i==0):
-        break
+#     print(percentage)
+
+#     print("")
+
+#     if(i==0):
+#         break
 
 
 
-
-sl.write('''## *Pearson Correlation - *''')
+sl.write(''' # Analysing the Predictions''')
+sl.write('''## Pearson Correlation - ''')
 sl.write(data.corr(method='pearson'))
 
 
 
 
+
 sl.write(''' # Asset Allocation ''')
-sl.write(''' ## *Efficient Frontier - * ''')
+sl.write(''' ## Efficient Frontier -  ''')
 
+col7,col8 = sl.columns((2,2))
+col7.header("")
 img3 = Image.open("efchart.png")
+col7.image(img3, use_column_width=True)
 
-sl.image(img3)
+
+img5 = Image.open("efoutput.png")
+col8.image(img5, use_column_width=True)
+
+
+
 
 
 sl.write(''' # Results ''')
