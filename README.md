@@ -1,3 +1,7 @@
+<!-- ABOUT THE PROJECT -->
+## About The Project 🚀
+
+The Investment Manager is designed to help users achieve the best possible returns on their investments by tailoring portfolios according to their risk preferences. By leveraging advanced machine learning techniques and financial theories, the application aims to offer optimized investment strategies.
 
 
 <!-- TABLE OF CONTENTS -->
@@ -19,16 +23,6 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
-
-
-
-
-<!-- ABOUT THE PROJECT -->
-## About The Project 🚀
-
-<img src="images/home.png">
-
-The Investment Manager is designed to help users achieve the best possible returns on their investments by tailoring portfolios according to their risk preferences. By leveraging advanced machine learning techniques and financial theories, the application aims to offer optimized investment strategies.
 
 
 
