@@ -46,9 +46,6 @@ The Investment Manager is designed to help users achieve the best possible retur
 
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ### Libraries Used
 
@@ -60,7 +57,6 @@ Check requirements.txt
 
 <!-- GETTING STARTED -->
 ## Getting Started 
-
 
 
 ### Prerequisites
@@ -93,7 +89,7 @@ After downloading the project, install the required libraries. In the console ru
     - [x] Portfolio optimisation
 - [x] Backtesting
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 <!-- CONTACT -->
@@ -104,18 +100,17 @@ Rishit Saraf - [@rishitsaraf](https://twitter.com/rishitsaraf) - rishitsaraf24@g
 
 Research Paper link: <a href = "https://drive.google.com/file/d/19tlUoon3kCyNZSuh6IMt25eb14S5LERy/view?usp=sharing">https://drive.google.com/file/d/19tlUoon3kCyNZSuh6IMt25eb14S5LERy/view?usp=sharing</a>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* <a href = "https://arxiv.org/pdf/2006.07634.pdf"> DeepRhythm: Exposing DeepFakes with Attentional Visual Heartbeat Rhythms </a>
-* <a href = "https://towardsdatascience.com/image-processing-with-python-application-of-fourier-transformation-5a8584dc175b"> Article FFT </a>
-* <a href = "https://github.com/flyingzhao/PyEVM"> Python Implementation of EVM </a>
-* <a href = "https://people.csail.mit.edu/mrub/evm/"> MIT's orignal implementation of Euler Video Magnification  </a>
+<a href="https://doi.org/10.21314/JOR.2018.369">Deep learning with long short-term memory networks for financial market predictions</a> by Thomas Fischer and Christopher Krauss
+<a href="https://www.ijcaonline.org/archives/volume181/number45/fjellstroem-2018-ijca-917561.pdf">Long Short-Term Memory Neural Network for Financial Time Series</a> by Carmina Fjellström
+<a href="https://www.mdpi.com/2227-7390/10/22/4255">Using Market News Sentiment Analysis for Stock Market Prediction</a> by Marian Pompiliu Cristescu et al.
+<a href="https://doi.org/10.1016/j.eswa.2021.115060">Robo-advisor using genetic algorithm and BERT sentiments from tweets for hybrid portfolio optimisation</a> by Edmund Kwong Wei Leow et al.
+<a href="https://ssrn.com/abstract=1117574">The Black-Litterman Approach: Original Model and Extensions</a> by Attilio Meucci
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
