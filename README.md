@@ -1,3 +1,5 @@
+Research Paper link: <a href = "https://drive.google.com/file/d/19tlUoon3kCyNZSuh6IMt25eb14S5LERy/view?usp=sharing">https://drive.google.com/file/d/19tlUoon3kCyNZSuh6IMt25eb14S5LERy/view?usp=sharing</a>
+
 <!-- ABOUT THE PROJECT -->
 ## About The Project 🚀
 
