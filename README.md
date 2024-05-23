@@ -107,10 +107,14 @@ Research Paper link: <a href = "https://drive.google.com/file/d/19tlUoon3kCyNZSu
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-<a href="https://doi.org/10.21314/JOR.2018.369">Deep learning with long short-term memory networks for financial market predictions</a> by Thomas Fischer and Christopher Krauss
-<a href="https://www.ijcaonline.org/archives/volume181/number45/fjellstroem-2018-ijca-917561.pdf">Long Short-Term Memory Neural Network for Financial Time Series</a> by Carmina Fjellström
-<a href="https://www.mdpi.com/2227-7390/10/22/4255">Using Market News Sentiment Analysis for Stock Market Prediction</a> by Marian Pompiliu Cristescu et al.
-<a href="https://doi.org/10.1016/j.eswa.2021.115060">Robo-advisor using genetic algorithm and BERT sentiments from tweets for hybrid portfolio optimisation</a> by Edmund Kwong Wei Leow et al.
-<a href="https://ssrn.com/abstract=1117574">The Black-Litterman Approach: Original Model and Extensions</a> by Attilio Meucci
+<a href="https://doi.org/10.21314/JOR.2018.369">Deep learning with long short-term memory networks for financial market predictions</a> by Thomas Fischer and Christopher Krauss <br>
+
+<a href="https://www.ijcaonline.org/archives/volume181/number45/fjellstroem-2018-ijca-917561.pdf">Long Short-Term Memory Neural Network for Financial Time Series</a> by Carmina Fjellström <br>
+
+<a href="https://www.mdpi.com/2227-7390/10/22/4255">Using Market News Sentiment Analysis for Stock Market Prediction</a> by Marian Pompiliu Cristescu et al. <br>
+
+<a href="https://doi.org/10.1016/j.eswa.2021.115060">Robo-advisor using genetic algorithm and BERT sentiments from tweets for hybrid portfolio optimisation</a> by Edmund Kwong Wei Leow et al. <br>
+
+<a href="https://ssrn.com/abstract=1117574">The Black-Litterman Approach: Original Model and Extensions</a> by Attilio Meucci <br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
