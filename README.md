@@ -1,17 +1,3 @@
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/rishitsaraf/remoteheartrate_deepfake_detection">
-    <img src="images/logo.jpeg" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">Engima AI - A Technology Powered Investment Manager</h3>
-
-  <p align="center">
-    A project associated with National University of Singapore
-    <br />
-</div>
-
 
 
 <!-- TABLE OF CONTENTS -->
